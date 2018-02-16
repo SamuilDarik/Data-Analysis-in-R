@@ -4,7 +4,7 @@
 library(ggplot2)
 library(dplyr)
 
-# type here the path to the dataset
+# type the path to the dataset here
 directory = "c:/Users/sam29/Projects/R/DataAnalysis/DataPreparation/Population_wrong.csv"
 
 # reading csv file
@@ -29,10 +29,8 @@ ggplot(population_total, aes(x=population_total$Year, y=population_total$Total))
   scale_x_continuous(breaks=seq(1840, 2020, by = 20)) +
   scale_y_continuous(breaks=seq(100000, 900000, by = 50000))
 
-
-
 # looking for outliers using
-# Chebyshev inequality (mean(x)+-k*s, where s - standard deviation) whith k = 3
+# Chebyshev inequality (mean(x)+-k*s contains at least 8/9 of data, where s - standard deviation) whith k = 3
 # (we can also consider "-" but it is redundantly)
 outliers <- population_total %>% filter(Total >
                               mean(population_total$Total) + 3 * sd(population_total$Total))
@@ -63,13 +61,13 @@ median_prev
 median_new = median(unlist(new_population_total$Total))
 median_new
 
-# boxplot showing the outlier in female group
+# boxplot showing the outlier in male group
 ggplot(population, aes(x=population$Sex, y=population$Amount)) +
   geom_boxplot() + 
   labs(title = "Population of Iceland by sex from 1841 to 2017",x="Sex", y="Total") +
   scale_y_continuous(breaks=seq(100000, 600000, by = 50000))
 
-# boxplot on total population before and after approximation the outlier respectively
+# boxplot on total population before and after approximating the outlier respectively
 options(stringsAsFactors = F)
 n <- data.frame(rbind(cbind(population_total$Total, group = "g1(before)"), 
            cbind(unlist(new_population_total$Total), group = "g2(after)")))
