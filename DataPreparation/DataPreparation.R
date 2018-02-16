@@ -30,12 +30,12 @@ ggplot(population_total, aes(x=population_total$Year, y=population_total$Total))
   scale_y_continuous(breaks=seq(100000, 900000, by = 50000))
 
 # looking for outliers using
-# Chebyshev inequality (mean(x)+-k*s contains at least 8/9 of data, where s - standard deviation) whith k = 3
+# Chebyshev inequality (mean(x)+-k*s contains at least 8/9 of data, where s - standard deviation) with k = 3
 # (we can also consider "-" but it is redundantly)
 outliers <- population_total %>% filter(Total >
                               mean(population_total$Total) + 3 * sd(population_total$Total))
 
-# the left data is
+# left data is
 left <- population_total %>% filter(Total <=
                                       mean(population_total$Total) + 3 * sd(population_total$Total))
 
