@@ -164,7 +164,7 @@ r2 <- sum((new_passengers$Total - mean(passengers$Total)) ^ 2)/
   sum((passengers$Total - mean(passengers$Total)) ^ 2)
 r2
 
-# коэффициент несоответствия Тейла
+# Thale's discrepancy ratio
 v <- (sum((passengers$Total - new_passengers$Total)^2)/
         (sum(passengers$Total^2)+sum(new_passengers$Total^2))) ^ 0.5
 v
