@@ -8,7 +8,7 @@ library(dplyr)
 directory <-  "c:/Users/sam29/Projects/R/Data-Analysis-in-R/DataPreparation/Population_wrong.csv"
 
 # reading csv file
-population <- read.csv(directory, header=F, col.names=c("Sex", "Year", "Amount"))
+population <- read.csv(directory, col.names=c("Sex", "Year", "Amount"))
 
 # let's see what we have (first six tuples)
 head(population)
