@@ -11,7 +11,7 @@ library(gridExtra)
 
 # type the path to the dataset here
 directory <- "c:/Users/sam29/Projects/R/Data-Analysis-in-R/DataVisualization/Passengers from abroad on luxury liners.csv"
-passengers <- read.csv(directory, header=F, col.names=c("Country", "Total"))
+passengers <- read.csv(directory, col.names=c("Country", "Total"))
 
 # let's leave only first four tuples and consider others as a sum
 passengers <- rbind(head(passengers, 4), 
@@ -32,7 +32,7 @@ legend(1, 1, labels, cex=0.7, fill=rainbow(length(slices)))
 
 # type the path to the dataset here
 directory <- "c:/Users/sam29/Projects/R/Data-Analysis-in-R/DataVisualization/Use of social media by individuals.csv"
-using_networks <- read.csv(directory, header=F, col.names=c("Country", "Total"))
+using_networks <- read.csv(directory, col.names=c("Country", "Total"))
 
 # plot a bar chart
 ggplot(using_networks, aes(x=using_networks$Country, y=using_networks$Total)) +
@@ -45,7 +45,7 @@ ggplot(using_networks, aes(x=using_networks$Country, y=using_networks$Total)) +
 
 # type the path to the dataset here
 directory <- "c:/Users/sam29/Projects/R/Data-Analysis-in-R/DataVisualization/Graduated students by age.csv"
-education <- read.csv(directory, header=F, col.names=c("Level","Age", "Total"))
+education <- read.csv(directory, col.names=c("Level","Age", "Total"))
 
 # plot a scatter chart
 ggplot(education, aes(x=education$Age, y=education$Total)) +
@@ -58,7 +58,7 @@ ggplot(education, aes(x=education$Age, y=education$Total)) +
 
 # type the path to the dataset here
 directory <- "c:/Users/sam29/Projects/R/Data-Analysis-in-R/DataVisualization/Graduated students by age_1.csv"
-education <- read.csv(directory, header=F,
+education <- read.csv(directory,
                       col.names=c("Age","1995-1996","1996-1997","1997-1998","1998-1999","1999-2000","2000-2001",
                                     "2001-2002","2002-2003","2003-2004","2004-2005","2005-2006","2006-2007","2007-2008","2008-2009","2009-2010",
                                     "2010-2011","2011-2012","2012-2013"))
@@ -77,12 +77,12 @@ ggplot(new_education, aes(new_education$Age, new_education$Total, col = new_educ
 
 # type the path to the dataset here
 directory <- "c:/Users/sam29/Projects/R/Data-Analysis-in-R/DataVisualization/Temperature in Reykjavik.csv"
-temperature <- read.csv(directory, header=F, col.names=c("Month", "Temperature"))
+temperature <- read.csv(directory, col.names=c("Month", "Temperature"))
 temperature$Month <- factor(temperature$Month, levels=unique(temperature$Month))
 
 # type the path to the dataset here
 directory <- "c:/Users/sam29/Projects/R/Data-Analysis-in-R/DataVisualization/Hours of sunshine in Reykjavik.csv"
-hours_sunshine <- read.csv(directory, header=F, col.names = c("Month", "Hours"))
+hours_sunshine <- read.csv(directory, col.names = c("Month", "Hours"))
 hours_sunshine$Month <- factor(hours_sunshine$Month, levels=unique(hours_sunshine$Month))
 
 # bar chart for one dataset
