@@ -79,4 +79,4 @@ ggplot(n, aes(n$Group, n$Total)) +
   geom_boxplot() +
   labs(title="Population of Iceland from 1841 to 2017",
        x="Before & After the approximation", y="Total") +
-  scale_y_continuous(breaks=seq(100000, 900000, by = 50000))
+  scale_y_continuous(breaks=seq(100000, 900000, by=50000))
