@@ -7,7 +7,7 @@ library(dplyr)
 library(cluster)
 library(nnet)
 
-# plot initiak data (iris dataset - petals)
+# plot initial data (iris dataset - petals)
 ggplot(iris, aes(Petal.Length, Petal.Width)) +
   labs(title = "Initial data") +
   geom_point()
@@ -36,7 +36,7 @@ ggplot(df.sil, aes(x = c(1:(nrow(iris)-2)), y = df.sil$sil, group = 1)) +
   geom_line(color="red", size=1) +
   labs(title = "Silhouette", x = "", y = "")
 
-# visualize the a splitting corresponding to the best metric value
+# visualize the splitting corresponding to the best metric value
 
 max(sil)
 which.is.max(sil)
